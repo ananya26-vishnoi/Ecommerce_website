@@ -1,0 +1,238 @@
+{%load static%}
+{%block content2%}
+	
+	<!-- Header -->
+	<header class="header shop">
+		<div class="middle-inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-2 col-12">
+						<!-- Logo -->
+						<div id="logo_index" class="logo">
+							<a href="index"><img src="{%static 'images/lattice logo.png'%}" alt="logo"></a>
+						</div>
+						<!--/ End Logo -->
+						<!-- Search Form -->
+						<div class="search-top">
+							<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
+							<!-- Search Form -->
+							<div class="search-top">
+								<form class="search-form" id="search-form-bg-color" action="searchproducts" enctype="application/x-www-form-urlencoded">
+									<select id="category" name="category">
+										<option value="all">All Category</option>
+										{%for x in category%}
+										<option value="{{x.name}}">{{x.name}}</option>
+										{%endfor%}
+									</select>
+									<input type="text" placeholder="Search here..." id="search" name="search">
+									<input type="submit" value="search">
+								</form>
+							</div>
+							<!--/ End Search Form -->
+						</div>
+						<!--/ End Search Form -->
+						<div class="mobile-nav"></div>
+					</div>
+					<div class="col-lg-8 col-md-7 col-12">
+						<div class="search-bar-top">
+							<div class="search-bar">
+								<form method="get" style="display: flex;" id="search_for_desktop" action="searchproducts" enctype="application/x-www-form-urlencoded">
+								<select id="category" name="category">
+									<option value="all">All Category</option>
+									{%for x in category%}
+									<option value="{{x.name}}">{{x.name}}</option>
+									{%endfor%}
+								</select>
+									<input style="outline: none;" id="search" name="search" placeholder="Search Products Here....." type="search">
+									<button class="btnn"><i class="ti-search"></i></button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-3 col-12">
+						<div class="right-bar">
+							<!--
+						
+							<div class="sinlge-bar">
+								<a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+							</div>
+							<div class="sinlge-bar">
+								<div class="w3-container">
+									<button  onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button>
+								    <div id="id01" class="w3-modal">
+									  <div class="w3-modal-content">
+										<div class="w3-container">
+										  <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+										  <p>username</p>
+										  <p>login</p>
+										</div>
+									  </div>
+									</div>
+								  </div>
+							</div>
+							<div class="sinlge-bar shopping">
+								<a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
+								
+								<div class="shopping-item">
+									<div class="dropdown-cart-header">
+										<span>2 Items</span>
+										<a href="#">View Cart</a>
+									</div>
+									<ul class="shopping-list">
+										<li>
+											<a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
+										
+											<a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
+											
+											<h4><a href="#">keyboard</a></h4>
+											
+											<p class="quantity">1x - <span class="amount">Rs 999.0</span></p>
+										</li>
+										<li>
+											<a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
+											
+											<a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
+											
+											<h4><a href="#">Mouse</a></h4>
+											
+											<p class="quantity">1x - <span class="amount">Rs659.00</span></p>
+										</li>
+									</ul>
+									<div class="bottom">
+										<div class="total">
+											<span>Total</span>
+											
+											<span class="total-amount">Rs1658.00</span>
+										</div>
+										<a href="checkout" class="btn animate">Checkout</a>
+									</div>
+								</div>
+								
+							</div>
+						-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Header Inner -->
+		<div class="header-inner">
+			<div class="container">
+				<div class="cat-nav-head">
+					<div class="row">
+						<div class="col-lg-3">
+							<div id="all_categories_hide" class="all-category">
+								<h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
+								<ul class="main-category">
+									<li>
+										<!--here comes category of item present-->
+										<!-- Ujjwal: Not shown in main page for some reason please check -->
+										<ul class="sub-category">
+											<li><a href="#">accessories</a></li>
+											<li><a href="#">best selling</a></li>
+											<li><a href="#">desktop</a></li>
+											<li><a href="#">mouse</a></li>
+											<li><a href="#">keyboards</a></li>
+											<li><a href="#">speakers</a></li>
+											<li><a href="#">ram</a></li>
+											<li><a href="#">graphic card </a></li>
+										</ul>
+									</li>
+									<li class="main-mega">
+										<ul class="mega-menu">
+											<li class="single-menu">
+												<a href="#" class="title-link">Shop earphones</a>
+												<div class="image">
+													<!--image of earphones-->
+													<img src="https://via.placeholder.com/225x155" alt="#">
+												</div>
+												<div class="inner-link">
+													<a href="#">true wieless</a>
+													<a href="#">head phones</a>
+													<a href="#">neckband</a>
+													<a href="#">earphones</a>
+												</div>
+											</li>
+											<li class="single-menu">
+												<a href="#" class="title-link">desktop</a>
+												<div class="image">
+													<!--images of laptop-->
+													<img src="https://via.placeholder.com/225x155" alt="#">
+												</div>
+												<div class="inner-link">
+													<a href="#">dell</a>
+													<a href="#">lenovo</a>
+													<a href="#">Hp</a>
+													<a href="#">asus</a>
+												</div>
+											</li>
+											<li class="single-menu">
+												<a href="#" class="title-link">keyboards</a>
+												<div class="image">
+													<!--image of keyboard-->
+													<img src="https://via.placeholder.com/225x155" alt="#">
+												</div>
+												<div class="inner-link">
+													<a href="#">dell</a>
+													<a href="#">Lenovo</a>
+													<a href="#">hp</a>
+													<a href="#">asus</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<!--this is category list item is shown on index page-->
+									<li><a href="#">accessories</a></li>
+									<li><a href="#">top 100 offer</a></li>
+									<li><a href="#">keyboards</a></li>
+									<li><a href="#">mouse</a></li>
+									<li><a href="#">ram</a></li>
+									<li><a href="#">graphic card</a></li>
+									<li><a href="#">sleeves</a></li>
+									<li><a href="#">router</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-9 col-12">
+							<div class="menu-area">
+								<!-- Main Menu -->
+								<nav class="navbar navbar-expand-lg">
+									<div class="navbar-collapse">	
+										<div class="nav-inner">	
+											<ul class="nav main-menu menu navbar-nav">
+													<li id="home" class="active"><a href="index">Home</a></li>
+													<li><a class="" onclick="change_active()" id="product_scroll" href="#products_scroll_smooth">Product</a></li>												
+													<li><a href="#">Service</a></li>
+													<li><a href="#">Shop<i class="ti-angle-down"></i></a>
+														<ul class="dropdown">
+															<li><a href="cart">Cart</a></li>
+															<li><a href="checkout">Checkout</a></li>
+														</ul>
+													</li>
+													<li><a href="#">Pages</a></li>									
+													<li><a href="#">Blog<i class="ti-angle-down"></i></a>
+														<ul class="dropdown">
+															<li><a href="blog-single-sidebar">Blog Single Sidebar</a></li>
+														</ul>
+													</li>
+													<li  id="contactus" ><a href="contact">Contact Us</a></li>
+													<li><a href="login">Login / Signup</a></li>
+                                                    <li><a href="#" style="display:none;">Your Orders</a></li>
+												</ul>
+										</div>
+									</div>
+								</nav>
+								<!--/ End Main Menu -->	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Header Inner -->
+	</header>
+	<!--/ End Header -->
+{%endblock%}
+
+
+

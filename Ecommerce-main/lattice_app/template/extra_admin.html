@@ -1,0 +1,77 @@
+{%load static%}
+{%block content1%}
+<!-- Sidebar -->
+<div id="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> &times;</a><br>
+    <a href="addproductpage"  style="font-size: 18px !important;">Add Product</a><br>
+    <a href="adminseeorders" style="font-size: 18px !important;">See Orders</a><br>
+    <a href="#" style="font-size: 18px !important;">Add User</a><br>
+    <a href="#" style="font-size: 18px !important;">See User Details</a><br>
+    <a href="#" style="font-size: 18px !important;">Feedback</a><br>
+    <a href="#" style="font-size: 18px !important;">Complaints</a><br>
+    <a href="#" style="font-size: 18px !important;">FAQs</a><br>
+</div>
+{%endblock%}
+
+{% block content2 %}
+<!-- Admin Header -->
+<div id="header">
+    <div id="menu_open">
+        <a href="#" id ="side-opener" onclick="openNav()"><img id="menu_open" src="{%static 'images/menu_open.svg'%}" alt=""></a>
+    </div>
+    
+    <div id="search">
+        <img src="{%static 'images/Search.svg'%}" alt="">
+        <input placeholder="Search" type="text" name="search" id="search_bar">
+    </div>
+    <div id="sideoptions">
+        <a href="a" style="text-decoration: none;"><div><img src="{%static 'images/admin_user.svg'%}" alt=""><p>
+            {{member.name}}
+        </p></div></a>
+        <img src="{%static 'images/Notification.svg'%}" alt="">
+        <img src="{%static 'images/Chat.svg'%}" alt="">
+    </div>
+</div>
+<div id="mid">
+    <div class="card" id="card1">
+        <div>
+            New <br>
+            <span>150</span> User's Joined
+            <div class="elipse1"></div>
+            <div class="elipse2"></div>
+        </div>
+    </div>
+    <div class="card" id="card2">
+        <div>
+            New <br>
+            <span>150</span> User's Joined
+            <div class="elipse1"></div>
+            <div class="elipse2"></div>
+        </div>
+    </div>
+    <div class="card" id="card3">
+        <div>
+            New <br>
+            <span>150</span> User's Joined
+            <div class="elipse1"></div>
+            <div class="elipse2"></div>
+        </div>
+    </div>
+    <div class="card" id="card4">
+        <div>
+            New <br>
+            <span>150</span> User's Joined
+            <div class="elipse1"></div>
+            <div class="elipse2"></div>
+        </div>
+    </div>
+    <div class="card" id="card5">
+        <div>
+            New <br>
+            <span>150</span> User's Joined
+            <div class="elipse3"></div>
+            <div class="elipse4"></div>
+        </div>
+    </div>
+</div>
+{%endblock%}

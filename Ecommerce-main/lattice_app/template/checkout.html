@@ -1,0 +1,399 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<!-- Meta Tag -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='copyright' content=''>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Title Tag  -->
+    <title>Lattice Computers</title>
+	
+	<!-- StyleSheet -->
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css'%}">
+	<!-- Magnific Popup -->
+    <link rel="stylesheet" href="{%static 'css/magnific-popup.min.css'%}">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="{%static 'css/font-awesome.css'%}">
+	<!-- Fancybox -->
+	<link rel="stylesheet" href="{%static 'css/jquery.fancybox.min.css'%}">
+	<!-- Themify Icons -->
+    <link rel="stylesheet" href="{%static 'css/themify-icons.css'%}">
+	<!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{%static 'css/niceselect.css'%}">
+	<!-- Animate CSS -->
+    <link rel="stylesheet" href="{%static 'css/animate.css'%}">
+	<!-- Flex Slider CSS -->
+    <link rel="stylesheet" href="{%static 'css/flex-slider.min.css'%}">
+	<!-- Owl Carousel -->
+    <link rel="stylesheet" href="{%static 'css/owl-carousel.css'%}">
+	<!-- Slicknav -->
+    <link rel="stylesheet" href="{%static 'css/slicknav.min.css'%}">
+	
+	<!-- Eshop StyleSheet -->
+	<link rel="stylesheet" href="{%static 'css/reset.css'%}">
+	<link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/responsive.css'%}">
+	<style>
+		#all_categories_hide{
+        display: none;
+    }
+    @media screen and (max-width: 990px){
+        #all_categories_hide{
+            display: block;
+        }
+	}
+		@media screen and (max-width: 990px){
+			#logo_index{
+				width: 100px;
+				height: auto;
+			} 
+		}
+	</style>
+	
+	
+</head>
+<body class="js">
+	
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="preloader-inner">
+			<div class="preloader-icon">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+	
+	{%include 'header.html'%}
+    {%block content2%}
+    {%endblock%}
+	
+		
+		<!-- Breadcrumbs -->
+		<div class="breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="bread-inner">
+							<ul class="bread-list">
+								<li><a href="index">Home<i class="ti-arrow-right"></i></a></li>
+								<li class="active"><a href="#">Checkout</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Breadcrumbs -->
+				
+		<!-- Start Checkout -->
+		<section class="shop checkout section">
+			<div class="container">
+				<div class="row"> 
+					<div class="col-lg-8 col-12">
+						<div class="checkout-form">
+							<h2>Checkout</h2>
+							<!-- Form -->
+							<form class="form" method="post" action="#">
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>First Name<span>*</span></label>
+											<input type="text" name="name" id="user_fname" placeholder="" required="required">
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>Last Name<span>*</span></label>
+											<input type="text" name="name" id="user_lname" placeholder="" required="required">
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>Email Address<span>*</span></label>
+											<input type="email" name="email" id="user_email" placeholder="" required="required">
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>Phone Number<span>*</span></label>
+											<input type="number" id="user_mob" name="number" placeholder="" required="required">
+										</div>
+									</div>										
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>Address Line 1<span>*</span></label>
+											<input type="text" id="user_addl1" name="address" placeholder="" required="required">
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>Address Line 2<span>*</span></label>
+											<input type="text" id="user_addl2" name="address" placeholder="" required="required">
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>City<span>*</span></label>
+											<input type="text" id="user_city" name="post" placeholder="" required="required">
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>State<span>*</span></label>
+											<input type="text" id="user_state" name="address" placeholder="" required="required">
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>Postal code<span>*</span></label>
+											<input type="text" id="user_postal" name="address" placeholder="" required="required">
+										</div>
+									</div>
+									
+									<div class="col-12">
+										
+									</div>
+								</div>
+							</form>
+							<!--/ End Form -->
+						</div>
+					</div>
+					<div class="col-lg-4 col-12">
+						<div class="order-details">
+							<!-- Order Widget -->
+							<div class="single-widget">
+								<h2>TOTAL</h2>
+								<div class="content">
+									<ul>
+										<!--total product price-->
+										<li>Sub Total<span>Rs {{price}}</span></li>
+										<!--shipping charges-->
+										<li>(+) Shipping<span>0</span></li>
+										<!--grand total-->
+										<li class="last">Total<span>Rs {{price}}</span></li>
+									</ul>
+								</div>
+							</div>
+							<!--/ End Order Widget -->
+							<!-- Order Widget -->
+							<div class="single-widget">
+								<h2>Payments</h2>
+								<div class="content">
+									<div class="checkbox">
+										<!-- <label class="checkbox-inline" for="1"><input name="updates" id="1" type="checkbox"> debit/credit card</label> -->
+										<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Cash On Delivery</label>
+										<!-- <label class="checkbox-inline" for="3"><input name="news" id="3" type="checkbox"> UPI </label> -->
+									</div>
+								</div>
+							</div>
+							<!--/ End Order Widget -->
+							
+							<!-- Button Widget -->
+							<div class="single-widget get-button">
+								<div class="content">
+									<div class="button">
+										<!--link to payment-->
+										<a onclick="addtobuy()" class="btn">proceed to checkout</a>
+									</div>
+								</div>
+							</div>
+							<!--/ End Button Widget -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/ End Checkout -->
+		
+		<!-- Start Shop Services Area  -->
+		<section class="shop-services section home">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Service -->
+						<div class="single-service">
+							<i class="ti-rocket"></i>
+							<h4>Free shiping</h4>
+							<p>Orders over Rs.5000</p>
+						</div>
+						<!-- End Single Service -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Service -->
+						<div class="single-service">
+							<i class="ti-reload"></i>
+							<h4>Free Return</h4>
+							<p>Within 30 days returns</p>
+						</div>
+						<!-- End Single Service -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Service -->
+						<div class="single-service">
+							<i class="ti-lock"></i>
+							<h4>Sucure Payment</h4>
+							<p>100% secure payment</p>
+						</div>
+						<!-- End Single Service -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Service -->
+						<div class="single-service">
+							<i class="ti-tag"></i>
+							<h4>Best Peice</h4>
+							<p>Guaranteed price</p>
+						</div>
+						<!-- End Single Service -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Shop Services -->
+		
+	
+		
+			
+		<!-- Start Footer Area -->
+		<footer class="footer">
+			<!-- Footer Top -->
+			<div class="footer-top section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-md-6 col-12">
+							<!-- Single Widget -->
+							<div class="single-footer about">
+								<div class="logo">
+									<a href="index"><img src="{%static 'images/lattice logo.png'%}" alt="#"></a>
+								</div>
+								<!--company description-->
+								<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+								<p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+91-971-183-4353</a></span></p>
+							</div>
+							<!-- End Single Widget -->
+						</div>
+						<div class="col-lg-2 col-md-6 col-12">
+							<!-- Single Widget -->
+							<div class="single-footer links">
+								<h4>Information</h4>
+								<ul>
+									<li><a href="#">About Us</a></li>
+									<li><a href="#">Faq</a></li>
+									<li><a href="#">Terms & Conditions</a></li>
+									<li><a href="#">Contact Us</a></li>
+									<li><a href="#">Help</a></li>
+								</ul>
+							</div>
+							<!-- End Single Widget -->
+						</div>
+						<div class="col-lg-2 col-md-6 col-12">
+							<!-- Single Widget -->
+							<div class="single-footer links">
+								<h4>Customer Service</h4>
+								<ul>
+									<li><a href="#">Payment Methods</a></li>
+									<li><a href="#">Money-back</a></li>
+									<li><a href="#">Returns</a></li>
+									<li><a href="#">Shipping</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+								</ul>
+							</div>
+							<!-- End Single Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6 col-12">
+							<!-- Single Widget -->
+							<div class="single-footer social">
+								<h4>Get In Tuch</h4>
+								<!-- Single Widget -->
+								<div class="contact">
+									<ul>
+										<li>16a Deepak Building</li>
+										<li>Nehru Place, Delhi</li>
+										<li>latticecomputersindia@gmail.com</li>
+										<li>+91-971-183-4353</li>
+									</ul>
+								</div>
+								<!-- End Single Widget -->
+								<ul>
+									<li><a href="#"><i class="ti-facebook"></i></a></li>
+									<li><a href="#"><i class="ti-twitter"></i></a></li>
+									<li><a href="#"><i class="ti-flickr"></i></a></li>
+									<li><a href="#"><i class="ti-instagram"></i></a></li>
+								</ul>
+							</div>
+							<!-- End Single Widget -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Footer Top -->
+		<!-- /End Footer Area -->
+			<script>
+				function addtobuy(){
+					$.ajax({
+						url: "addtobuy",
+						type: "POST",
+						data: {
+							csrfmiddlewaretoken: '{{ csrf_token }}',
+							productid: '{{id}}',
+							username:document.getElementById('user_fname').value+" "+document.getElementById('user_lname').value,
+							phone:document.getElementById('user_mob').value,
+							email:document.getElementById('user_email').value,
+							address: document.getElementById('user_addl1').value+" "+document.getElementById('user_addl2').value,
+							city:document.getElementById('user_city').value,
+							state:document.getElementById('user_state').value,
+							postal:document.getElementById('user_postal').value,
+						},
+						success: function(data){
+							window.location.href=data
+						},
+						// error: function(data){
+						//     location.reload()
+						// }
+					});
+				}
+			</script>
+	<!-- Jquery -->
+    <script src="{%static 'js/jquery.min.js'%}"></script>
+    <script src="{%static 'js/jquery-migrate-3.0.0.js'%}"></script>
+	<script src="{%static 'js/jquery-ui.min.js'%}"></script>
+	<!-- Popper JS -->
+	<script src="{%static 'js/popper.min.js'%}"></script>
+	<!-- Bootstrap JS -->
+	<script src="{%static 'js/bootstrap.min.js'%}"></script>
+	<!-- Color JS -->
+	<script src="{%static 'js/colors.js'%}"></script>
+	<!-- Slicknav JS -->
+	<script src="{%static 'js/slicknav.min.js'%}"></script>
+	<!-- Owl Carousel JS -->
+	<script src="{%static 'js/owl-carousel.js'%}"></script>
+	<!-- Magnific Popup JS -->
+	<script src="{%static 'js/magnific-popup.js'%}"></script>
+	<!-- Fancybox JS -->
+	<script src="{%static 'js/facnybox.min.js'%}"></script>
+	<!-- Waypoints JS -->
+	<script src="{%static 'js/waypoints.min.js'%}"></script>
+	<!-- Countdown JS -->
+	<script src="{%static 'js/finalcountdown.min.js'%}"></script>
+	<!-- Nice Select JS -->
+	<script src="{%static 'js/nicesellect.js'%}"></script>
+	<!-- Ytplayer JS -->
+	<script src="{%static 'js/ytplayer.min.js'%}"></script>
+	<!-- Flex Slider JS -->
+	<script src="{%static 'js/flex-slider.js'%}"></script>
+	<!-- ScrollUp JS -->
+	<script src="{%static 'js/scrollup.js'%}"></script>
+	<!-- Onepage Nav JS -->
+	<script src="{%static 'js/onepage-nav.min.js'%}"></script>
+	<!-- Easing JS -->
+	<script src="{%static 'js/easing.js'%}"></script>
+	<!-- Active JS -->
+	<script src="{%static 'js/active.js'%}"></script>
+</body>
+</html>

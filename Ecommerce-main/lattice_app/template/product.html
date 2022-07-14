@@ -1,0 +1,424 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Meta Tag -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='copyright' content=''>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Title Tag  -->
+    <title>lattice </title>
+		
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
+	<!-- Magnific Popup -->
+    <link rel="stylesheet" href="{%static 'css/magnific-popup.min.css' %}">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="{%static 'css/font-awesome.css' %}">
+	<!-- Fancybox -->
+	<link rel="stylesheet" href="{%static 'css/jquery.fancybox.min.css' %}">
+	<!-- Themify Icons -->
+    <link rel="stylesheet" href="{%static 'css/themify-icons.css' %}">
+	<!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{%static 'css/niceselect.css' %}">
+	<!-- Animate CSS -->
+    <link rel="stylesheet" href="{%static 'css/animate.css' %}">
+	<!-- Flex Slider CSS -->
+    <link rel="stylesheet" href="{%static 'css/flex-slider.min.css' %}">
+	<!-- Owl Carousel -->
+    <link rel="stylesheet" href="{%static 'css/owl-carousel.css' %}">
+	<!-- Slicknav -->
+    <link rel="stylesheet" href="{%static 'css/slicknav.min.css' %}">
+	
+	<!-- Eshop StyleSheet -->
+	<link rel="stylesheet" href="{%static 'css/reset.css' %}">
+	<link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <link rel="stylesheet" href="{%static 'css/responsive.css' %}">
+
+	<!-- Self written styling -->
+	<link rel="stylesheet" href="{%static 'css/product.css' %}">
+	<!-- For jquery and ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+
+	<style>
+		#products{
+			background-color: olivedrab;
+		}
+		#home{
+			background-color: transparent;
+		}
+		@media screen and (max-width: 990px){
+			#logo_index{
+				width: 100px;
+				height: auto;
+			} 
+		}
+		#all_categories_hide{
+        display: none;
+		}
+		@media screen and (max-width: 990px){
+			#all_categories_hide{
+				display: block;
+			}
+		}
+	</style>
+</head>
+<body class="js">
+	
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="preloader-inner">
+			<div class="preloader-icon">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+		
+	{%include 'header.html'%}
+    {%block content2%}
+    {%endblock%}
+		
+		<!-- Breadcrumbs -->
+		<div class="breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="bread-inner">
+							<ul class="bread-list">
+								<li><a href="index">Home<i class="ti-arrow-right"></i></a></li>
+								<li class="active"><a href="product">Product</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Breadcrumbs -->
+			
+		<!-- Start Blog Single -->
+		<section class="blog-single section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-12">
+						<div class="blog-single-main">
+							<div class="row">
+								<div class="col-12">
+									<div class="image">
+										<img src="{{imgpath}}" alt="#">
+									</div>
+									<div class="blog-detail">
+										<h2 class="blog-title">{{name}}</h2>
+										<h6>Rs {{price}}</h6>
+										<button style="margin-top:20px;height: 50px; width: 100px;color:white;font-size: 15px;background-color: black;" href="#">Add to cart</button>
+                                <a id="buy_now_button" style="height: 50px;cursor:pointer; width: 100px;color:white;font-size: 15px;background-color: black;" onclick="buynow()">Buy Now</a>
+							
+										<div class="content">
+											<p>{{desc}}</p>
+										</div>
+									</div>
+									<div class="share-social">
+										<div class="row">
+											<div class="col-12">
+												<div class="content-tags">
+													<h4>Tags:</h4>
+													<ul class="tag-inner">
+														{%for x in tags%}
+														<li><a href="#">{{x}}</a></li>
+														{%endfor%}
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="comments">
+										<h3 class="comment-title">Reviews</h3>
+										<!-- Single Comment -->
+										<div class="single-comment">
+											<img src="https://via.placeholder.com/80x80" alt="#">
+											<div class="content">
+												<h4>ujjwal<span>certified user</span></h4>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, aspernatur reprehenderit consequuntur consectetur cumque maxime itaque quibusdam id ad deserunt vero illum, quam, laboriosam provident adipisci autem eaque aut! Autem ratione corrupti at suscipit sunt quo, nemo modi consequuntur numquam.</p>
+											</div>
+										</div>
+										<!-- End Single Comment -->
+										<!-- Single Comment -->
+										<div class="single-comment">
+											<img src="https://via.placeholder.com/80x80" alt="#">
+											<div class="content">
+												<h4>jayant<span>certified user</span></h4>
+												<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla nobis officia saepe reiciendis facere ad quia amet illo omnis blanditiis excepturi assumenda enim placeat, hic voluptatem aliquid culpa at praesentium itaque neque quasi, dolores ipsam. Soluta ipsa sit rem nesciunt?</p>
+											</div>
+										</div>
+										
+									</div>									
+								</div>											
+								<div class="col-12">			
+									<div class="reply">
+										<div class="reply-head">
+											<h2 class="reply-title">Review product</h2>
+											<!-- Comment Form -->
+											<form class="form" action="#">
+												<div class="row">
+													<div class="col-lg-6 col-md-6 col-12">
+														<div class="form-group">
+															<label>Your Name<span>*</span></label>
+															<input type="text" name="name" placeholder="" required="required">
+														</div>
+													</div>
+													<div class="col-lg-6 col-md-6 col-12">
+														<div class="form-group">
+															<label>Your Email<span>*</span></label>
+															<input type="email" name="email" placeholder="" required="required">
+														</div>
+													</div>
+													<div class="col-12">
+														<div class="form-group">
+															<label>Review<span>*</span></label>
+															<textarea name="message" placeholder=""></textarea>
+														</div>
+													</div>
+													<div class="col-12">
+														<div class="form-group button">
+															<button type="submit" class="btn">Post</button>
+														</div>
+													</div>
+												</div>
+											</form>
+											<!-- End Comment Form -->
+										</div>
+									</div>			
+								</div>			
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-12">
+						<div class="main-sidebar">
+							<!-- Single Widget -->
+							<div class="single-widget search">
+								<div class="form">
+									<input type="email" placeholder="Search Here...">
+									<a class="button" href="#"><i class="fa fa-search"></i></a>
+								</div>
+							</div>
+							<!--/ End Single Widget -->
+							<!-- Single Widget -->
+							<div class="single-widget category">
+								<h3 class="title">{{name}}</h3>
+								<ul class="categor-list">
+                                    
+									{%for x in features%}
+									<li>{{x}}</li>
+									{%endfor%}
+								</ul>
+                                </div>
+							<!--/ End Single Widget -->
+							<!-- Single Widget -->
+							<div class="single-widget recent-post">
+								<h3 class="title">Similar products</h3>
+								<!-- Single Post -->
+								<div class="single-post">
+									<div class="image">
+										<img src="https://via.placeholder.com/100x100" alt="#">
+									</div>
+									<div class="content">
+										<h5><a href="#">{{name}}</a></h5>
+										<ul class="comment">
+											<li>Rs {{price}}</li>
+										</ul>
+									</div>
+								</div>
+								<!-- End Single Post -->
+								<!-- Single Post -->
+								<div class="single-post">
+									<div class="image">
+										<img src="https://via.placeholder.com/100x100" alt="#">
+									</div>
+									<div class="content">
+										<h5><a href="#">hp pavillion</a></h5>
+										<ul class="comment">
+											<li>Rs 59,999</li>
+										</ul>
+									</div>
+								</div>
+								</div>
+								<!-- End Single Post -->
+								<!-- Single Post -->
+								<div class="single-post">
+									<div class="image">
+										<img src="https://via.placeholder.com/100x100" alt="#">
+									</div>
+									<div class="content">
+										<h5><a href="#">hp pavillion</a></h5>
+										<ul class="comment">
+											<li>Rs 59,999</li>
+										</ul>
+									</div>
+								</div>
+								<!-- End Single Post -->
+							</div>
+							<!--/ End Single Widget -->
+							<!-- Single Widget -->
+							<!--/ End Single Widget -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/ End Blog Single -->
+			
+		<!-- Start Footer Area -->
+	<footer class="footer">
+		<!-- Footer Top -->
+		<div class="footer-top section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer about">
+							<div class="logo">
+								<a href="index"><img src="{%static 'images/lattice logo.png'%}" alt="#"></a>
+							</div>
+							<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+							<p class="call">Got Question? Call us 24/7<span><a href="#">+91-971-183-4353</a></span></p>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-2 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer links">
+							<h4>Information</h4>
+							<ul>
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Faq</a></li>
+								<li><a href="#">Terms & Conditions</a></li>
+								<li><a href="contact">Contact Us</a></li>
+								<li><a href="#">Help</a></li>
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-2 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer links">
+							<h4>Customer Service</h4>
+							<ul>
+								<li><a href="#">Payment Methods</a></li>
+								<li><a href="#">Money-back</a></li>
+								<li><a href="#">Returns</a></li>
+								<li><a href="#">Shipping</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer social">
+							<h4>Get In Tuch</h4>
+							<!-- Single Widget -->
+							<div class="contact">
+								<ul>
+									<li>16a deepak building</li>
+									<li>Nehru Place,Delhi</li>
+									<li>latticecomputersindia@gmail.com</li>
+									<li>+91-971-183-4353</li>
+								</ul>
+							</div>
+							<!-- End Single Widget -->
+							<ul>
+								<li><a href="#"><i class="ti-facebook"></i></a></li>
+								<li><a href="#"><i class="ti-twitter"></i></a></li>
+								<li><a href="#"><i class="ti-flickr"></i></a></li>
+								<li><a href="#"><i class="ti-instagram"></i></a></li>
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Footer Top -->
+		<div class="copyright">
+			<div class="container">
+				<div class="inner">
+					<div class="row">
+						<div class="col-lg-6 col-12">
+							<div class="left">
+								<p>Copyright © 2022 <a href="#" target="_blank">Lattice Computers</a>  -  All Rights Reserved.</p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-12">
+							<div class="right">
+								<img src="images/payments.png" alt="#">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- /End Footer Area -->
+	<script>
+		function buynow(){
+			$.ajax({
+                url: "checkout",
+                type: "POST",
+                data: {
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    id: '{{id}}',
+                },
+                success: function(data){
+                    window.location.href=data
+                },
+                // error: function(data){
+                //     location.reload()
+                // }
+            });
+		}
+		
+	</script>
+	<!-- Jquery -->
+    <script src="{%static 'js/jquery.min.js'%}"></script>
+    <script src="{%static 'js/jquery-migrate-3.0.0.js'%}"></script>
+	<script src="{%static 'js/jquery-ui.min.js'%}"></script>
+	<!-- Popper JS -->
+	<script src="{%static 'js/popper.min.js'%}"></script>
+	<!-- Bootstrap JS -->
+	<script src="{%static 'js/bootstrap.min.js'%}"></script>
+	<!-- Color JS -->
+	<script src="{%static 'js/colors.js'%}"></script>
+	<!-- Slicknav JS -->
+	<script src="{%static 'js/slicknav.min.js'%}"></script>
+	<!-- Owl Carousel JS -->
+	<script src="{%static 'js/owl-carousel.js'%}"></script>
+	<!-- Magnific Popup JS -->
+	<script src="{%static 'js/magnific-popup.js'%}"></script>
+	<!-- Fancybox JS -->
+	<script src="{%static 'js/facnybox.min.js'%}"></script>
+	<!-- Waypoints JS -->
+	<script src="{%static 'js/waypoints.min.js'%}"></script>
+	<!-- Countdown JS -->
+	<script src="{%static 'js/finalcountdown.min.js'%}"></script>
+	<!-- Nice Select JS -->
+	<script src="{%static 'js/nicesellect.js'%}"></script>
+	<!-- Ytplayer JS -->
+	<script src="{%static 'js/ytplayer.min.js'%}"></script>
+	<!-- Flex Slider JS -->
+	<script src="{%static 'js/flex-slider.js'%}"></script>
+	<!-- ScrollUp JS -->
+	<script src="{%static 'js/scrollup.js' %}"></script>
+	<!-- Onepage Nav JS -->
+	<script src="{%static 'js/onepage-nav.min.js' %}"></script>
+	<!-- Easing JS -->
+	<script src="{%static 'js/easing.js' %}"></script>
+	<!-- Active JS -->
+	<script src="{%static 'js/active.js' %}"></script>
+</body>
+</html>

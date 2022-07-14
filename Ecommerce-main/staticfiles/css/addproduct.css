@@ -1,0 +1,57 @@
+#addproductform{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#flex_1_add_product{
+    display: flex;
+}
+.user-box{
+    margin-right: 50px;
+    width: auto;
+}
+.fullwidth{
+    width: 90% !important;
+}
+#Category{
+    width: 95% !important;
+}
+#AddAFeature,#RemoveAFeature,#submit-add-product{
+    cursor: pointer;
+    background: linear-gradient(268.06deg, rgba(108, 18, 199, 0.703) 34.48%, rgba(232, 21, 151, 0.642) 96.29%);
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    border-radius: 18px;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 25px;
+}
+#submit-add-product{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    
+}
+#AddAFeature:hover,#RemoveAFeature:hover,#submit-add-product:hover{
+    background: linear-gradient(268.06deg, rgba(179, 114, 245, 0.53) 34.48%, rgba(204, 68, 153, 0.3922) 96.29%);
+}
+#AddAFeature div,#RemoveAFeature div{
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+}
+.image{
+    margin-bottom: 30px;
+}

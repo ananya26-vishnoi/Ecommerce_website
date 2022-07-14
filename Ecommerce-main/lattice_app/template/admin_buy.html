@@ -1,0 +1,268 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Admin</title>
+
+    <!-- Local styling -->
+    <link rel="stylesheet" href="{%static 'css/admin_page.css'%}">
+    <script src="{%static 'js/admin.js'%}"></script>
+    <!-- <link rel="stylesheet" href="{%static 'css/admin_team_login.css'%}"> -->
+    
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- For jquery and ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    
+</head>
+<body id="main_body">
+    <div id="darken">
+        {%include 'extra_admin.html'%}
+        {%block content2%}
+        {%endblock%}
+
+    <!-- Block content 1 to be replaced later -->
+    <div id="team_details">
+        <h2 id="team_details_heading">Product details</h2>
+        <a href="addproductpage" style="text-decoration: none;" id="add_team_button">Add Product</a>
+    </div>
+    <!-- Team details table -->
+    <div id="team">
+    <table>
+        <thead>
+            <tr>
+                <th class="table_name">User Name</th>
+                <th class="table_email">Product Name</th>
+                <th class="table_phone">Price</th>
+                <th class="table_login">Discount</th>
+                <th class="table_view">View</th>
+                <th class="table_delete">Order Completed</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for x in buy%}
+            <tr>
+                <td>{{x.username}}</td>
+                <td>{{x.product_name}}</td>
+                <td>Rs. {{x.price}}</td>
+                <td>{{x.discount}} %</td>
+                <td><a href="seesinglebuy/{{x.id}}"><img class="view" src="{%static 'images/view.svg'%}" alt=""></a></td>
+                <td><img class="delete" src="{%static 'images/delete.svg'%}" onclick="open_modal('{{x.id}}')" alt=""></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+<!-- Team Delete modal -->
+<div id="delete_modal" class="">
+    <div id="header_modal">
+        <p  onclick="close_modal()">&times;</p>
+    </div>
+
+    <div id="confirmation">
+        Are you sure you want to delete product '<span id="productdeletemodal"></span>' with id=<span id="productdeleteid"></span> from database <br>
+        Change will be permanent
+    </div>
+    <div id="confirmation_button">
+        <input type="submit" onclick="deleteproductfromdatabase()" value="Delete">
+    </div>
+</div>
+
+<!-- Edit team modal -->
+
+<div id="edit_modal">
+    <div id="header_modal">
+        <p  onclick="close_modal()">&times;</p>
+    </div>
+    <div id="edit_body">
+        <form action="login_admin" method="POST" enctype="application/x-www-form-urlencoded">
+            {%csrf_token%}
+            <div class="flex">
+                <div class="user-box">
+                    <input name="input_usernamebox" id="input_firstname" type="text" required="">
+                    <label>Name</label>
+                    <img src="{%static 'images/User.svg'%}" id="login_userlogo" style="margin-top: 6px;" alt="user" width="35" height="35" />
+                </div>
+                <div class="user-box">
+                    <input name="input_lastname" id="input_lastname" type="text"required="">
+                    <label>Details</label>
+                    <img src="{%static 'images/User.svg'%}" id="login_userlogo" alt="user" width="35" height="35" />
+                </div>
+                <div class="user-box">
+                    <input name="input_email" id="input_email" type="text" required="">
+                    <label>Price</label>
+                    <img src="{%static 'images/At sign.svg'%}" id="login_userlogo" alt="user" width="35" height="35" />
+                </div>
+            </div>
+
+            <div class="flex">
+                <div class="user-box">
+                    <input name="input_passwordbox" id="input_passwordbox" type="text" name="idd" required="">
+                    <label>In Stock</label>
+                    <img src="{%static 'images/Lock.svg'%}" id="login_passwordlogo" style="margin-left: 4px;" alt="user" width="40" height="40" />
+                </div>
+            </div>
+
+            <div id="confirmation_button_edit">
+                <input type="submit" id="login" value="Edit">
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- View team details modal -->
+
+<div id="view_modal">
+    <div id="header_modal">
+        <p  onclick="close_modal()">&times;</p>
+    </div>
+    <div id="edit_body">
+        <form action="login_admin" method="POST" enctype="application/x-www-form-urlencoded">
+            {%csrf_token%}
+            <div class="flex">
+                <div class="user-box">
+                    <input name="input_usernamebox" id="input_firstname" type="text" required="">
+                    <label>First name</label>
+                    <img src="{%static 'images/User.svg'%}" id="login_userlogo" style="margin-top: 6px;" alt="user" width="35" height="35" />
+                </div>
+                <div class="user-box">
+                    <input name="input_lastname" id="input_lastname" type="text"required="">
+                    <label>Last name</label>
+                    <img src="{%static 'images/User.svg'%}" id="login_userlogo" alt="user" width="35" height="35" />
+                </div>
+                <div class="user-box">
+                    <input name="input_email" id="input_email" type="text" required="">
+                    <label>Email</label>
+                    <img src="{%static 'images/At sign.svg'%}" id="login_userlogo" alt="user" width="35" height="35" />
+                </div>
+            </div>
+
+            <div class="flex">
+                <div class="user-box">
+                    <input name="input_passwordbox" id="input_passwordbox" type="text" name="idd" required="">
+                    <label>Password</label>
+                    <img src="{%static 'images/Lock.svg'%}" id="login_passwordlogo" style="margin-left: 4px;" alt="user" width="40" height="40" />
+                </div>
+                <div class="user-box">
+                    <input name="input_number" id="input_number" type="number" required="">
+                    <label>Number</label>
+                    <img src="{%static 'images/telephone.svg'%}" style="margin-top: 3px;margin-left: -6px;" id="login_userlogo" alt="user" width="35" height="35" />
+                </div>
+                <div class="user-box">
+                    <input name="input_dob" id="input_dob" type="text" required="">
+                    <label>Dob</label>
+                    <img src="{%static 'images/Planner.svg'%}" style="margin-top:4px;margin-left:-4px;" id="login_userlogo" alt="user" width="35" height="35" />
+                </div>
+            </div>
+
+            <div class="flex">
+                <div class="user-box">
+                    <input name="input_passwordbox" id="input_address" type="text" name="idd" required="">
+                    <label>Address</label>
+                    <img src="{%static 'images/City.svg'%}" id="login_passwordlogo" alt="user" style="margin-left: 4px;" width="40" height="40" />
+                </div>
+                <div class="user-box">
+                    <input name="input_text" id="input_text" type="text" required="">
+                    <label>City</label>
+                    <img src="{%static 'images/Address.svg'%}" style="margin-top: 5px; margin-left: -5px;" id="login_userlogo" alt="user" width="35" height="35" />
+                </div>
+                <div class="user-box">
+                    <input name="input_state" id="input_state" type="text" required="">
+                    <label>State</label>
+                    <img src="{%static 'images/Address.svg'%}"  style="margin-top: 5px; margin-left: -5px;" id="login_userlogo" alt="user" width="35" height="35" />
+                </div>
+            </div>
+
+            <div class="flex" id="final_flex">
+                <div class="user-box">
+                    <input name="input_country" id="input_country" type="text" name="idd" required="">
+                    <label>Country</label>
+                    <img src="{%static 'images/Museum.svg'%}" style="margin-left: 9px;" id="login_passwordlogo" alt="user" width="40" height="40" />
+                </div>
+                <div class="user-box">
+                    <input name="input_gender" id="input_gender" type="text" required="">
+                    <label>Gender</label>
+                    <img src="{%static 'images/Gender.svg'%}" id="login_userlogo" alt="user" width="35" height="35" />
+                </div>
+                
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- Add team member modal -->
+<div id="add_team_modal">
+    <div id="header_modal">
+        <p  onclick="close_modal()">&times;</p>
+    </div>
+    <div id="edit_body">
+        <form action="" method="POST" enctype="application/x-www-form-urlencoded">
+            <div class="flex">
+                <div class="user-box">
+                    <input name="input_usernamebox" id="input_firstname" type="text" required="">
+                    <label>Name</label>
+                    <img src="{%static 'images/User.svg'%}" id="login_userlogo" style="margin-top: 6px;" alt="user" width="35" height="35" />
+                </div>
+                <div class="user-box">
+                    <input name="input_lastname" id="input_lastname" type="text"required="">
+                    <label>Details</label>
+                    <img src="{%static 'images/User.svg'%}" id="login_userlogo" alt="user" width="35" height="35" />
+                </div>
+                <div class="user-box">
+                    <input name="input_email" id="input_email" type="text" required="">
+                    <label>Price</label>
+                    <img src="{%static 'images/At sign.svg'%}" id="login_userlogo" alt="user" width="35" height="35" />
+                </div>
+            </div>
+
+            <div class="flex">
+                <div class="user-box">
+                    <input name="input_passwordbox" id="input_passwordbox" type="text" name="idd" required="">
+                    <label>In Stock</label>
+                    <img src="{%static 'images/Lock.svg'%}" id="login_passwordlogo" style="margin-left: 4px;" alt="user" width="40" height="40" />
+                </div>
+            </div>
+
+            
+
+            
+
+        </form>
+    </div>
+</div>
+
+<script>
+    function deleteproductfromdatabase(){
+        productdeleteid=document.getElementById('productdeleteid').innerHTML;
+        $.ajax({
+                url: "deleteproductfromdatabase",
+                type: "POST",
+                data: {
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    id: productdeleteid,
+                },
+                success: function(data){
+                    location.reload()
+                },
+                error: function(data){
+                    location.reload()
+                }
+            });
+    }
+</script>
+
+</body>
+</html>

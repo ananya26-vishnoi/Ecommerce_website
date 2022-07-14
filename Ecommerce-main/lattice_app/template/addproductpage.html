@@ -1,0 +1,129 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Admin</title>
+
+    <!-- Local styling -->
+    <link rel="stylesheet" href="{%static 'css/admin_page.css'%}">
+    <link rel="stylesheet" href="{%static 'css/addproduct.css'%}">
+    <script src="{%static 'js/admin.js'%}"></script>
+    <script src="{%static 'js/addproduct.js'%}"></script>
+    
+    
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- For jquery and ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+
+
+        <style>
+            #otherCategCheckbox{
+                position: relative;
+                margin-bottom: 40px;
+            }
+            #otherCategCheckbox label{
+                position: absolute;
+                top: -20px;
+                left: 0;
+                font-size: 1.2rem;
+                color: #000;
+                font-weight: bold;
+            }
+            #otherCategCheckbox input{
+                position: absolute;
+                top: -4px;
+                left: 40px;
+            }
+        </style>
+</head>
+<body id="main_body">
+    <div id="darken">
+        {%include 'extra_admin.html'%}
+        {%block content2%}
+        {%endblock%}
+    <div id="addproductform">
+        <form action="add_product_to_database" enctype="multipart/form-data" method="POST">
+            {%csrf_token%}
+            <div id="flex_1_add_product">
+            <div class="user-box">
+                <input name="name" id="name" type="text" required>
+                <label>Name</label>
+            </div>
+
+            <div class="user-box">
+                <input name="price" id="price" type="number" required>
+                <label>Price</label>
+            </div>
+
+            <div class="user-box">
+                <input name="quantity" id="quantity" type="number" required>
+                <label>Quantity</label>
+            </div>
+
+            <div class="user-box">
+                <input name="discount" id="discount" value="0" type="number" required>
+                <label>Discount in %</label>
+            </div>
+            </div>
+
+            <div class="user-box">
+                <select class="fullwidth" name="category" required id="category">
+                    <option value="">Select a category</option>
+                    {%for x in category%}
+                    {%if x.name != ""%}
+                    <option value="{{x.name}}">{{x.name}}</option>
+                    {%endif%}
+                    {%endfor%}
+                    <option value="nill">Not Present</option>
+                </select>
+                <div id="otherCategCheckbox">
+                    <input name="other_categ_show" onclick="showothercategory()" id="other_categ_show" type="checkbox">
+                    <label  for="other_categ_show"> Other Category</label>
+                </div>
+                <br>
+                <div class="user-box" style="margin-left: 50px;display: none;" id="other_categ_div">
+                    <input name="other_category" value=" "  class="fullwidth" id="other_category" type="text" required>
+                    <label>Specify Other Category</label>
+                </div>
+            </div>
+            <div class="tags">
+                <div class="user-box">
+                    <input name="tags"  class="fullwidth" id="tags" type="text" required>
+                    <label>Tags (Seperated by comma)</label>
+                </div>
+            </div>
+            <div class="user-box">
+                <textarea placeholder="Description" name="description"  class="fullwidth" id="description" type="text" required></textarea>
+            </div>
+            <div id="features">
+                <div class="user-box" id="feature-1">
+                    <input name="features" class="fullwidth features_user_box" id="features" type="text" required>
+                    <label>Features (Please Seperate by ';')</label>
+                </div>   
+            </div>
+            
+            <div class="image">
+                <label>Image</label>
+                <input name="image" class="fullwidth" id="image" type="file" required>
+            </div>
+            <div  >
+                <input type="submit"  id="submit-add-product" value="Add Product">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+</html>

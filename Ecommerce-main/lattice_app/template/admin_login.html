@@ -1,0 +1,73 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>admin Login</title>
+
+    <!-- Local styling link -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="form_container">
+      <div id="logo"><img src="{% static 'images/lattice logo.png'%}" alt=""></div>
+      {% if messages %}
+      <div id="error">
+          {%for message in messages%}
+          {{message}}
+          {%endfor%}
+      </div>
+      {%endif%}
+        <form action="admin_check" method="POST" enctype="application/x-www-form-urlencoded">
+            {%csrf_token%}
+            <div class="user-box">
+                <input name="input_usernamebox" id="input_usernamebox" type="text" name="idd" required="">
+                <label>Username</label>
+                <img src="{% static 'images/User Male.svg'%}" id="login_userlogo" alt="user" width="35" height="35" />
+            </div>
+            <div class="user-box">
+                <input name="input_passwordbox" id="input_passwordbox" type="password" name="idd" required="">
+                <label>Password</label>
+                <img src="{%static 'images/Lock.svg'%}" id="login_passwordlogo" alt="user" width="45" height="45" />
+                <img onclick="password_show()" src="{%static 'images/Eye.svg'%}" id="login_passwordeye" alt="user" width="27" height="27" />
+                <img onclick="password_hide()" src="{%static 'images/Closed Eye.svg'%}" id="login_passwordeye_slash" alt="user" width="27" height="27" />
+            </div>
+            <div id="forgot_password"><a href="#">Forgot password?</a></div>
+            <div id="logindiv">
+                <input type="submit" id="login" value="Login">
+            </div>
+         
+        </form>
+    </div>
+
+   
+    <script>
+        function password_show() {
+            document.getElementById('input_passwordbox').type = "text";
+            document.getElementById('login_passwordeye').style.display = "none";
+            document.getElementById('login_passwordeye_slash').style.display = "block";
+        }
+
+        function password_hide() {
+            document.getElementById('input_passwordbox').type = "password";
+            document.getElementById('login_passwordeye').style.display = "block";
+            document.getElementById('login_passwordeye_slash').style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

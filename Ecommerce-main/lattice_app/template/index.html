@@ -1,0 +1,1327 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<!-- Meta Tag -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='copyright' content=''>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Title Tag  -->
+    <title>lattice</title>
+	
+	<!-- StyleSheet -->
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css'%}">
+	<!-- Magnific Popup -->
+    <link rel="stylesheet" href="{%static 'css/magnific-popup.min.css'%}">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="{%static 'css/font-awesome.css'%}">
+	<!-- Fancybox -->
+	<link rel="stylesheet" href="{%static 'css/jquery.fancybox.min.css'%}">
+	<!-- Themify Icons -->
+    <link rel="stylesheet" href="{%static 'css/themify-icons.css'%}">
+	<!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{%static 'css/niceselect.css'%}">
+	<!-- Animate CSS -->
+    <link rel="stylesheet" href="{%static 'css/animate.css'%}">
+	<!-- Flex Slider CSS -->
+    <link rel="stylesheet" href="{%static 'css/flex-slider.min.css'%}">
+	<!-- Owl Carousel -->
+    <link rel="stylesheet" href="{%static 'css/owl-carousel.css'%}">
+	<!-- Slicknav -->
+    <link rel="stylesheet" href="{%static 'css/slicknav.min.css'%}">
+	
+	<!-- Eshop StyleSheet -->
+	<link rel="stylesheet" href="{%static 'css/reset.css'%}">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/responsive.css'%}">
+	<style>
+		*{
+			scroll-behavior: smooth;
+		}
+		.nice-select{
+			padding-right: 30px !important;
+		}
+		.image_width{
+			width:350px;
+			height:340px;
+		}
+		#search-form-bg-color{
+			background-color: #ffffff;
+		}
+		.text_over_background_image{
+			color: white !important;
+		}
+		@media screen and (max-width: 990px){
+			#logo_index{
+				width: 100px;
+				height: auto;
+			} 
+		}
+	</style>
+	
+</head>
+<body class="js">
+	
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="preloader-inner">
+			<div class="preloader-icon">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+	{%include 'header.html'%}
+    {%block content2%}
+    {%endblock%}
+	
+
+	
+	<!-- Slider Area -->
+	<section class="hero-slider">
+		<!-- Single Slider -->
+		<div class="single-slider">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-lg-9 offset-lg-3 col-12">
+						<div class="text-inner">
+							<div class="row">
+								<div class="col-lg-7 col-12">
+									<div class="hero-text">
+										<!--here comes the bigimage of main product which is set as background image in style.css-->
+										<!--here comes discount and main product name-->
+										<h1><span class="text_over_background_image">UP TO 10% OFF </span>DELL Laptops</h1>
+										<!--here comes discription of main product-->
+										<p  class="text_over_background_image">Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find it pereri <br> odiy maboriosm.</p>
+										<div class="button">
+											<a href="searchproducts?category=all&search=cpu" class="btn">Shop Now!</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Single Slider -->
+	</section>
+	<!--/ End Slider Area -->
+	<!--
+	
+	<section class="small-banner section">
+		<div class="container-fluid">
+			<div class="row">
+				
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="single-banner">
+						
+						<img src="https://via.placeholder.com/600x370" alt="#">
+						<div class="content">
+							
+							<p>Laptops</p>
+							<h3>DELL <br> Hp</h3>
+							
+							<a href="#">See more</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="single-banner">
+						
+						<img src="https://via.placeholder.com/600x370" alt="#">
+						<div class="content">
+							
+							<p>Desktop Collectons</p>
+							<h3>Lenovo <br> 2020</h3>
+							
+							<a href="#">Shop Now</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-12">
+					<div class="single-banner tab-height">
+						
+						<img src="https://via.placeholder.com/600x370" alt="#">
+						<div class="content">
+						
+							<p>Flash Sale</p>
+							
+							<h3>end Season <br> Up to <span>30%</span> Off</h3>
+							
+							<a href="#">Discover Now</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	
+-->
+	<!-- Start Product Area -->
+    <div id="products_scroll_smooth" class="product-area section">
+            <div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="section-title">
+							<h2>Categories</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="product-info">
+							<div class="nav-main">
+								<!-- Tab Nav -->
+								<ul class="nav nav-tabs" id="myTab" role="tablist">
+									<!--this navigation bar will take us to respective section-->
+									<!--names of products to be managed too-->
+									<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#laptop" role="tab">Monitor</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#RAM" role="tab">Memory</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Keyboard" role="tab">Cables</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories" role="tab">SSD</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Printer" role="tab">Printer</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#prices" role="tab">Graphic Card</a></li>
+
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#cpu" role="tab">Cpu / Processor</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#power_supplies" role="tab">Power Supplies</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#motherboard" role="tab">MotherBoard</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#hard_disks" role="tab">Hard Disks</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#cabinet" role="tab">Cabinet</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#cartridges" role="tab">Cartridges</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#inks" role="tab">Inks</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#note_machines" role="tab">Note Counting Machines</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#mini_comp" role="tab">Mini Computers</a></li>
+								</ul>
+								<!--/ End Tab Nav -->
+							</div>
+							<div class="tab-content" id="myTabContent">
+								<!-- Start Single Tab -->
+								<!--id should match with navbar content-->
+								<div class="tab-pane fade show active" id="laptop" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+
+											{%for x in monitor%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<!-- Start Single Tab -->
+								<!--id should match with content of navbar -->
+								<div class="tab-pane fade" id="RAM" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+											
+											{%for x in ram%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<!-- Start Single Tab -->
+								<div class="tab-pane fade" id="Keyboard" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+
+											{%for x in keyboard%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width" src="https://via.placeholder.com/550x750" alt="#">
+															<img class="hover-img image_width" src="https://via.placeholder.com/550x750" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">30% Off</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to quick buy-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="product-details.html">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											{%endfor%}
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<!-- Start Single Tab -->
+								<!--id should match with navbar-->
+								<div class="tab-pane fade" id="accessories" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+											
+											{%for x in ssd%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<!-- Start Single Tab -->
+								<!--id should match with navbar-->
+								<div class="tab-pane fade" id="Printer" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+											
+											{%for x in printer%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<!-- Start Single Tab -->
+								<!--id should match eith navbar-->
+								<div class="tab-pane fade" id="prices" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+											
+											{%for x in graphic_card%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+								<!--/ End Single Tab -->
+								<div class="tab-pane fade" id="cpu" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+
+											{%for x in cpu%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+								
+								<div class="tab-pane fade" id="power_supplies" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+
+											{%for x in power_supplies%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade" id="motherboard" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+
+											{%for x in motherboard%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade" id="hard_disks" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+
+											{%for x in hard_disks%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade" id="cabinet" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+
+											{%for x in cabinet%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade" id="cartridges" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+
+											{%for x in cartridges%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade" id="inks" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+
+											{%for x in inks%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade" id="note_machines" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+
+											{%for x in note_machines%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+
+								<div class="tab-pane fade" id="mini_comp" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+
+											{%for x in mini_comp%}
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="viewproduct?productid={{x.id}}">
+															<!--product image-->
+															<img class="default-img image_width"  src="{{x.img}}" alt="#">
+															<img class="hover-img image_width" src="{{x.img}}" alt="#">
+															<!--product discount-->
+															{%if x.discount > 0 %} 
+															<span class="price-dec">{{x.discount}}</span>
+															{%endif%}
+														</a>
+														<div class="button-head">
+															<div class="product-action">
+																<!--link to buy now-->
+																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																<!--link to wishlist-->
+																<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																<!--link to compare-->
+																<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+															</div>
+															<div class="product-action-2">
+																<!--link to add cart-->
+																<a title="Tap to Buy" href="#">Tap to Buy</a>
+															</div>
+														</div>
+													</div>
+													<div class="product-content">
+														<!--product name-->
+														<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+														<div class="product-price">
+															<!--product price-->
+															<span>{{x.price}}</span>
+														</div>
+													</div>
+												</div>
+											</div>	
+											{%endfor%}
+
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+    </div>
+	<!-- End Product Area -->
+<!--	
+	-- Start Midium Banner  --
+	<section class="midium-banner">
+		<div class="container">
+			<div class="row">
+				- Single Banner  --
+				<div class="col-lg-6 col-md-6 col-12">
+					<div class="single-banner">
+						-product image--
+						<img src="https://via.placeholder.com/600x370" alt="#">
+						<div class="content">
+							-type of product--
+							<p>Desktop Collectons</p>
+							-product category and discount--
+							<h3> <br>Keyboard Up to<span> 30%</span></h3>
+							-link to product page--
+							<a href="#">Shop Now</a>
+						</div>
+					</div>
+				</div>
+				- /End Single Banner  -
+				</div>
+		</div>
+	</section>
+	- End Midium Banner -
+-->
+	<!-- Start Most Popular -->
+	<div class="product-area most-popular section">
+        <div class="container">
+            <div class="row">
+				<div class="col-12">
+					<div class="section-title">
+						<h2>Hot Item</h2>
+					</div>
+				</div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="owl-carousel popular-slider">
+						{%for x in hot%}
+						<!-- Start Single Product -->
+						<div class="single-product">
+							<div class="product-img">
+								<a href="viewproduct?productid={{x.id}}">
+									<!--product image-->
+									<img class="default-img image_width" src="{{x.img}}" alt="#">
+									<img class="hover-img image_width" src="{{x.img}}" alt="#">
+									<!--hot span-->
+									<span class="out-of-stock">Hot</span>
+								</a>
+								<div class="button-head">
+									<div class="product-action">
+										<!--link to quick shop-->
+										<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+										<!--linnk to wishlist-->
+										<a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+										<!--link to compare-->
+										<a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+									</div>
+									<div class="product-action-2">
+										<!--link to Tap to Buy-->
+										<a title="Tap to Buy" href="#">Tap to Buy</a>
+									</div>
+								</div>
+							</div>
+							<div class="product-content">
+								<!--product name-->
+								<h3><a href="viewproduct?productid={{x.id}}">{{x.name}}</a></h3>
+								<div class="product-price">
+									<!--product price new-->
+									<span>{{x.price}}</span>
+								</div>
+							</div>
+						</div>
+						{%endfor%}
+						<!-- End Single Product -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- End Most Popular Area -->
+	
+	
+	
+	<!-- Start Shop Home List  -->
+	<section class="shop-home-list section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="row">
+						<div class="col-12">
+							<div class="shop-section-title">
+								<h1>On sale</h1>
+							</div>
+						</div>
+					</div>
+					<!-- Start Single List  -->
+					<div class="single-list">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-12">
+								<div class="list-image overlay">
+									<!--image of product-->
+									<img src="{%static 'images/mouse.jpg'%}" alt="#">
+									<!--link to buy now-->
+									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12 no-padding">
+								<div class="content">
+									<!--name of product-->
+									<h5 class="title"><a href="#">Mouse</a></h5>
+									<!--price of product-->
+									<p class="price with-discount">RS.799</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Single List  -->
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="row">
+						<div class="col-12">
+							<div class="shop-section-title">
+								<h1>Best Seller</h1>
+							</div>
+						</div>
+					</div>
+					<!-- Start Single List  -->
+					<div class="single-list">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-12">
+								<div class="list-image overlay">
+									<!--image of product-->
+									<img src="{%static 'images/keyboard.jpg'%}" alt="#">
+									<!--link to buy now-->
+									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12 no-padding">
+								<div class="content">
+									<!--name of product-->
+									<h5 class="title"><a href="#">Keyboard</a></h5>
+									<!--price of product-->
+									<p class="price with-discount">Rs.899</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Single List  -->
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="row">
+						<div class="col-12">
+							<div class="shop-section-title">
+								<h1>Top viewed</h1>
+							</div>
+						</div>
+					</div>
+					<!-- Start Single List  -->
+					<div class="single-list">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-12">
+								<div class="list-image overlay">
+									<!--image of product-->
+									<img src="{%static 'images/printer.jpg'%}" alt="#">
+									<!--link to buy now-->
+									<a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-12 no-padding">
+								<div class="content">
+									<!--name of product-->
+									<h5 class="title"><a href="#">Printer</a></h5>
+									<!--price of product-->
+									<p class="price with-discount">Rs.3999</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Single List  -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Shop Home List  -->
+	
+	<!-- Start Shop Blog  -->
+	<section class="shop-blog section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-title">
+						<h2>From Our Blog</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-12">
+					<!-- Start Single Blog  -->
+					<div class="shop-single-blog">
+						<!--image for blog-->
+						<img src="https://via.placeholder.com/370x300" alt="#">
+						<div class="content">
+							<!--date of blog-->
+							<p class="date">24 April , 2022. Sunday</p>
+							<!--title of blog-->
+							<a href="#" class="title">Sed adipiscing ornare.</a>
+							<!--link to blog page-->
+							<a href="#" class="more-btn">Continue Reading</a>
+						</div>
+					</div>
+					<!-- End Single Blog  -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Shop Blog  -->
+	
+	<!-- Start Shop Services Area -->
+	<section class="shop-services section home">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="ti-rocket"></i>
+						<h4>Free shiping</h4>
+						<p>Orders over $100</p>
+					</div>
+					<!-- End Single Service -->
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="ti-reload"></i>
+						<h4>Free Return</h4>
+						<p>Within 30 days returns</p>
+					</div>
+					<!-- End Single Service -->
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="ti-lock"></i>
+						<h4>Sucure Payment</h4>
+						<p>100% secure payment</p>
+					</div>
+					<!-- End Single Service -->
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="ti-tag"></i>
+						<h4>Best Peice</h4>
+						<p>Guaranteed price</p>
+					</div>
+					<!-- End Single Service -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Shop Services Area -->
+
+	
+	
+	<!-- Start Footer Area -->
+	<footer class="footer">
+		<!-- Footer Top -->
+		<div class="footer-top section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer about">
+							<div class="logo">
+								<a href="index"><img src="{%static 'images/lattice logo.png'%}" alt="#"></a>
+							</div>
+							<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+							<p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+91-971-183-4353</a></span></p>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-2 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer links">
+							<h4>Information</h4>
+							<ul>
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Faq</a></li>
+								<li><a href="#">Terms & Conditions</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Help</a></li>
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-2 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer links">
+							<h4>Customer Service</h4>
+							<ul>
+								<li><a href="#">Payment Methods</a></li>
+								<li><a href="#">Money-back</a></li>
+								<li><a href="#">Returns</a></li>
+								<li><a href="#">Shipping</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer social">
+							<h4>Get In Tuch</h4>
+							<!-- Single Widget -->
+							<div class="contact">
+								<ul>
+									<li>16 a,Deepal building</li>
+									<li>nehru place, Delhi</li>
+									<li>latticecomputersindia@gmail.com</li>
+									<li>+91-971-183-4353</li>
+								</ul>
+							</div>
+							<!-- End Single Widget -->
+							<ul>
+								<li><a href="#"><i class="ti-facebook"></i></a></li>
+								<li><a href="#"><i class="ti-twitter"></i></a></li>
+								<li><a href="#"><i class="ti-flickr"></i></a></li>
+								<li><a href="#"><i class="ti-instagram"></i></a></li>
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Footer Top -->
+		
+	</footer>
+	<!-- /End Footer Area -->
+ 
+	<script>
+		function change_active(){
+			document.getElementById('product_scroll').classList.add("active");
+			document.getElementById('home').classList.remove("active");
+		}
+	</script>
+	<!-- Jquery -->
+    <script src="{%static 'js/jquery.min.js'%}"></script>
+    <script src="{%static 'js/jquery-migrate-3.0.0.js'%}"></script>
+	<script src="{%static 'js/jquery-ui.min.js'%}"></script>
+	<!-- Popper JS -->
+	<script src="{%static 'js/popper.min.js'%}"></script>
+	<!-- Bootstrap JS -->
+	<script src="{%static 'js/bootstrap.min.js'%}"></script>
+	<!-- Color JS -->
+	<script src="{%static 'js/colors.js'%}"></script>
+	<!-- Slicknav JS -->
+	<script src="{%static 'js/slicknav.min.js'%}"></script>
+	<!-- Owl Carousel JS -->
+	<script src="{%static 'js/owl-carousel.js'%}"></script>
+	<!-- Magnific Popup JS -->
+	<script src="{%static 'js/magnific-popup.js'%}"></script>
+	<!-- Waypoints JS -->
+	<script src="{%static 'js/waypoints.min.js'%}"></script>
+	<!-- Countdown JS -->
+	<script src="{%static 'js/finalcountdown.min.js'%}"></script>
+	<!-- Nice Select JS -->
+	<script src="{%static 'js/nicesellect.js'%}"></script>
+	<!-- Flex Slider JS -->
+	<script src="{%static 'js/flex-slider.js'%}"></script>
+	<!-- ScrollUp JS -->
+	<script src="{%static 'js/scrollup.js'%}"></script>
+	<!-- Onepage Nav JS -->
+	<script src="{%static 'js/onepage-nav.min.js'%}"></script>
+	<!-- Easing JS -->
+	<script src="{%static 'js/easing.js'%}"></script>
+	<!-- Active JS -->
+	<script src="{%static 'js/active.js'%}"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Sign up</title>
+
+    <!-- Local styling link -->
+    <link rel="stylesheet" href="{%static 'css/login.css'%}">
+
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css'%}">
+	<!-- Magnific Popup -->
+    <link rel="stylesheet" href="{%static 'css/magnific-popup.min.css'%}">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="{%static 'css/font-awesome.css'%}">
+	<!-- Fancybox -->
+	<link rel="stylesheet" href="{%static 'css/jquery.fancybox.min.css'%}">
+	<!-- Themify Icons -->
+    <link rel="stylesheet" href="{%static 'css/themify-icons.css'%}">
+	<!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{%static 'css/niceselect.css'%}">
+	<!-- Animate CSS -->
+    <link rel="stylesheet" href="{%static 'css/animate.css'%}">
+	<!-- Flex Slider CSS -->
+    <link rel="stylesheet" href="{%static 'css/flex-slider.min.css'%}">
+	<!-- Owl Carousel -->
+    <link rel="stylesheet" href="{%static 'css/owl-carousel.css'%}">
+	<!-- Slicknav -->
+    <link rel="stylesheet" href="{%static 'css/slicknav.min.css'%}">
+	
+	<!-- Eshop StyleSheet -->
+	<link rel="stylesheet" href="{%static 'css/reset.css'%}">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/responsive.css'%}">
+
+    <!-- Local styling link -->
+    <link rel="stylesheet" href="{%static 'css/login.css' %}">
+
+<style>
+    body{
+        display: block !important;
+    }
+    #form_outer_container{
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh; */
+        width: 100%;
+    }
+    
+    #login_userlogo{
+        top: 10px !important;
+    }
+    #lock_image{
+        position: absolute;
+        left: -3px;
+        top: 5px;
+    }
+    #logo{
+        margin-bottom: 30px !important;
+    }
+    #login_link{
+        color: rgb(41, 41, 187);
+    }
+    #new_user{
+        font-size: 20px;
+    }
+    #password_user_box{
+        margin-bottom: 30px;
+    }
+    #all_categories_hide{
+        display: none;
+    }
+    #form_info_box{
+        height: auto !important;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-bottom: 50px;
+    }
+    #search_for_desktop{
+			width: 340px;
+		}
+    @media screen and (max-width: 990px){
+        #all_categories_hide{
+            display: block;
+        }
+	}
+</style>
+</head>
+
+<body>
+    {%include 'header.html'%}
+    {%block content2%}
+    {%endblock%}
+    <div id="form_outer_container">
+    <div id="form_info_box">
+      <div id="logo"><img src="{%static 'images/lattice logo.png'%}" alt=""></div>
+        <form action="checkmail" method="POST" enctype="application/x-www-form-urlencoded">
+            {%csrf_token%}
+            <div class="user-box">
+                <input name="username" id="username" type="text" name="idd" required="">
+                <label>Username</label>
+                <img src="{%static 'images/User Male.svg'%}" id="login_userlogo" alt="user" width="35" height="35" />
+            </div>
+            <div class="user-box">
+                <input name="email" id="email" type="email" name="idd" required="">
+                <label>E-Mail</label>
+                <img src="{%static 'images/Email Open.svg'%}" id="login_userlogo" alt="user" width="35" height="35" />
+            </div>
+            <div class="user-box">
+                <input name="pwd" id="pwd" type="password" name="idd" required="">
+                <label>Password</label>
+                <img src="{%static 'images/Lock.svg'%}" id="login_passwordlogo" alt="user" width="45" height="45" />
+                <img onclick="password_show()" src="{%static 'images/Eye.svg'%}" id="login_passwordeye" alt="user" width="27" height="27" />
+                <img onclick="password_hide()" src="{%static 'images/Closed Eye.svg'%}" id="login_passwordeye_slash" alt="user" width="27" height="27" />
+            </div>
+            
+            <div id="logindiv">
+                <input type="submit" id="login" value="Sign Up">
+            </div>
+            <div id="new_user">
+                already a user? <a id="login_link" href="login">Login</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+   
+    <script>
+        function password_show() {
+            document.getElementById('pwd').type = "text";
+            document.getElementById('login_passwordeye').style.display = "none";
+            document.getElementById('login_passwordeye_slash').style.display = "block";
+        }
+
+        function password_hide() {
+            document.getElementById('pwd').type = "password";
+            document.getElementById('login_passwordeye').style.display = "block";
+            document.getElementById('login_passwordeye_slash').style.display = "none";
+        }
+    </script>
+
+    <!-- Jquery -->
+    <script src="{%static 'js/jquery.min.js'%}"></script>
+    <script src="{%static 'js/jquery-migrate-3.0.0.js'%}"></script>
+	<script src="{%static 'js/jquery-ui.min.js'%}"></script>
+	<!-- Popper JS -->
+	<script src="{%static 'js/popper.min.js'%}"></script>
+	<!-- Bootstrap JS -->
+	<script src="{%static 'js/bootstrap.min.js'%}"></script>
+	<!-- Color JS -->
+	<script src="{%static 'js/colors.js'%}"></script>
+	<!-- Slicknav JS -->
+	<script src="{%static 'js/slicknav.min.js'%}"></script>
+	<!-- Owl Carousel JS -->
+	<script src="{%static 'js/owl-carousel.js'%}"></script>
+	<!-- Magnific Popup JS -->
+	<script src="{%static 'js/magnific-popup.js'%}"></script>
+	<!-- Waypoints JS -->
+	<script src="{%static 'js/waypoints.min.js'%}"></script>
+	<!-- Countdown JS -->
+	<script src="{%static 'js/finalcountdown.min.js'%}"></script>
+	<!-- Nice Select JS -->
+	<script src="{%static 'js/nicesellect.js'%}"></script>
+	<!-- Flex Slider JS -->
+	<script src="{%static 'js/flex-slider.js'%}"></script>
+	<!-- ScrollUp JS -->
+	<script src="{%static 'js/scrollup.js'%}"></script>
+	<!-- Onepage Nav JS -->
+	<script src="{%static 'js/onepage-nav.min.js'%}"></script>
+	<!-- Easing JS -->
+	<script src="{%static 'js/easing.js'%}"></script>
+	<!-- Active JS -->
+	<script src="{%static 'js/active.js'%}"></script>
+</body>
+
+</html>
