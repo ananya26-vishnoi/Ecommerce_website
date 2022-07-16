@@ -25,7 +25,9 @@ zipcode :str
 gender :str 
 mobile :str 
 address:str 
+
 # Create your views here.
+
 def index(request):
     laptop=Product.objects.filter(category='laptop')
     keyboard=Product.objects.filter(category='cables')
